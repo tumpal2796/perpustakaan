@@ -2,16 +2,55 @@
 
 
 [[projects]]
-  digest = "1:838a562e112d475f8dce0fce1525f7adc782a7e1a082fbb66472486a865e0a91"
-  name = "github.com/joiggama/money"
+  digest = "1:6c41d4f998a03b6604227ccad36edaed6126c397e5d78709ef4814a1145a6757"
+  name = "github.com/jmoiron/sqlx"
+  packages = [
+    ".",
+    "reflectx",
+  ]
+  pruneopts = "UT"
+  revision = "d161d7a76b5661016ad0b085869f77fd410f3e6a"
+  version = "v1.2.0"
+
+[[projects]]
+  digest = "1:8ef506fc2bb9ced9b151dafa592d4046063d744c646c1bbe801982ce87e4bc24"
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid",
+  ]
+  pruneopts = "UT"
+  revision = "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79"
+  version = "v1.0.0"
+
+[[projects]]
+  digest = "1:38cb4759428493e0b02eade2f8d2920eb55a8fb35acb45de3247f0fbeab81b78"
+  name = "gopkg.in/gcfg.v1"
+  packages = [
+    ".",
+    "scanner",
+    "token",
+    "types",
+  ]
+  pruneopts = "UT"
+  revision = "61b2c08bc8f6068f7c5ca684372f9a6cb1c45ebe"
+  version = "v1.2.3"
+
+[[projects]]
+  digest = "1:78d374b493e747afa9fbb2119687e3740a7fb8d0ebabddfef0a012593aaecbb3"
+  name = "gopkg.in/warnings.v0"
   packages = ["."]
   pruneopts = "UT"
-  revision = "dc37c83a59217f6699efe78b9bdbae3c536f20a3"
-  version = "v2.0.0"
+  revision = "ec4a0fea49c7b46c2aeb0b51aac55779c607e52b"
+  version = "v0.1.2"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/joiggama/money"]
+  input-imports = [
+    "github.com/jmoiron/sqlx",
+    "github.com/lib/pq",
+    "gopkg.in/gcfg.v1",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
