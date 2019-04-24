@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
 
+	"github.com/tokopedia/perpustakaan/api/common/apiwriter"
 	"github.com/tokopedia/perpustakaan/api/model"
 	"github.com/tokopedia/perpustakaan/api/repository/author"
 
@@ -35,6 +35,7 @@ func main() {
 	}
 
 	database.InitConnection(configuration.Database)
+	apiwriter.NewAPIWriter()
 	//init resource
 	bookauthor.New(database.Conn["perpustakaan"])
 	book.NewBookRes(database.Conn["perpustakaan"])
@@ -53,15 +54,10 @@ func main() {
 func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	result, err := bookresponse.BookResponse.GetBookResponse(context.Background(), model.Filter{})
 	if err != nil {
-		w.Write([]byte(err.Error()))
+		apiwriter.ApiWriter.WriteFailResp(w, err)
+		return
 	}
 
-	res, err := json.Marshal(&result)
-	if err != nil {
-		w.Write([]byte(err.Error()))
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(res)
+	apiwriter.ApiWriter.WriteSuccesaResp(w, result)
 	return
 }
