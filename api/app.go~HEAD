@@ -7,19 +7,19 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/tokopedia/perpustakaan/API/model"
-	"github.com/tokopedia/perpustakaan/API/repository/author"
+	"github.com/tokopedia/perpustakaan/api/model"
+	"github.com/tokopedia/perpustakaan/api/repository/author"
 
-	"github.com/tokopedia/perpustakaan/API/repository/book"
+	"github.com/tokopedia/perpustakaan/api/repository/book"
 
-	"github.com/tokopedia/perpustakaan/API/repository/bookauthor"
+	"github.com/tokopedia/perpustakaan/api/repository/bookauthor"
 
-	"github.com/tokopedia/perpustakaan/API/repository/publisher"
+	"github.com/tokopedia/perpustakaan/api/repository/publisher"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/tokopedia/perpustakaan/API/domain/bookresponse"
+	"github.com/tokopedia/perpustakaan/api/domain/bookresponse"
 
-	"github.com/tokopedia/perpustakaan/API/database"
+	"github.com/tokopedia/perpustakaan/api/database"
 	gcfg "gopkg.in/gcfg.v1"
 )
 
